@@ -14,8 +14,6 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('products', ProductController::class);
-// });
 
-Route::resource('products', ProductController::class);
+Route::resource('/products', ProductController::class);
+Route::get('/barcodes', 'App\Http\Controllers\BarcodeController@GetProductBarcodes')->name('products.barcode');

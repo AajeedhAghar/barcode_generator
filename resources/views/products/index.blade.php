@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('layout')
  
 @section('content')
     <div class="row">
@@ -47,6 +47,8 @@
                     @method('DELETE')
       
                     <button type="submit" class="btn btn-danger">Delete</button>
+
+                    
                 </form>
             </td>
         </tr>

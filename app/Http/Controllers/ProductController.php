@@ -128,14 +128,7 @@ class ProductController extends Controller
     }
 
 
-    public function makeBarcode()
-    { 
-        // $number = rand(101700,1000000);
-        $product_code = '12234';
-        $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
-        $barcode = $generator->getBarcode('$product_code', $generator::TYPE_CODE_128);
-        return view('products.view', compact('product_code', 'barcode'));
-    }
+    
 
     
 }
