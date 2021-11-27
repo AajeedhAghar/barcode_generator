@@ -1,5 +1,5 @@
 @extends('layout')
-   
+
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-   
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -22,36 +22,39 @@
             </ul>
         </div>
     @endif
-  
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+
+    <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
-   
-         <div class="row">
+
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Product Name</strong>
-                    <input type="text" class="form-control" name="product_name" value="{{ $product->product_name }}" placeholder="Product Name">
+                    <input type="text" class="form-control" name="product_name" value="{{ $product->product_name }}"
+                        placeholder="Product Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Description</strong> 
-                    <input type="text" class="form-control" name="description" value="{{ $product->description }} "placeholder="Description">
+                    <strong>Description</strong>
+                    <input type="text" class="form-control" name="description" value="{{ $product->description }} "
+                        placeholder="Description">
                 </div>
             </div>
-         
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price</strong>
-                    <input type="text" class="form-control" name="price" value="{{ $product->price }}" placeholder="Price">
+                    <input type="text" class="form-control" name="price" value="{{ $product->price }}"
+                        placeholder="Price">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-   
+
     </form>
 @endsection

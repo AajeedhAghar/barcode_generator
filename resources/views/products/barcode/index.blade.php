@@ -1,22 +1,29 @@
-<div>
-    <h4>Products Barcode</h4>
-</div>
+@extends('layout')
 
-<div class="card-body">
-    <div id="print">
-    <div class="row">
-        @forelse ( $productsBarcode as $barcode )
-           <div class="col-md-3">
-                <div class="card">
-                    <h4>{{$barcode -> product_code}}</h4>
-                    <div class="card-body">
-                        {!!$barcode->barcode!!}    
-                    </div>    
-                </div>   
-            </div> 
-        @empty
-            
-        @endforelse
+@section('content')
+
+    <div>
+        <h3>Products Barcode</h3>
     </div>
+    
+
+    <div class="card-body">
+        <div id="print">
+            <div class="row">
+                @forelse ( $productsBarcode as $barcode )
+                    <div class="col-md-5">
+                        <div class="card">
+
+                            <div class="card-body">
+                                {{ $barcode->product_code }}
+                                {!! $barcode->barcode !!}
+                            </div>
+                        </div>
+                    </div>
+                @empty
+
+                @endforelse
+            </div>
+        </div>
     </div>
-</div>
+@endsection
